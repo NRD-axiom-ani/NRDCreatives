@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 /* ---------------- Marquee ---------------- */
 export const ClientMarquee = () => {
-  const logos = ["LUMEN", "NORTHWIND", "AETHER", "VANTAGE", "MERIDIAN", "ORBIT", "HALCYON", "NOVA", "PRISM", "ATLAS"];
+  const logos = ["Token2049", "Lamborghini", "Aibc.World", "Mall ofEmirates", "Rayup Realestate Inc.", "Cillioniare", "Mercedes-Benz", "Via Cibo", "Spice Bros", "Benelli"];
   const row = [...logos, ...logos];
   return (
     <section className="border-y border-white/5 bg-surface/40 py-10 backdrop-blur-xl">
@@ -302,7 +302,7 @@ export const Founder = () => (
             </div>
           </div>
           <div className="absolute -bottom-6 -right-6 glass-card p-5 max-w-[220px]">
-            <div className="text-3xl font-medium text-gradient">100M+</div>
+            <div className="text-3xl font-medium text-gradient">800M+</div>
             <div className="text-xs uppercase tracking-widest text-foreground-muted">Views generated under his playbook</div>
           </div>
         </div>
@@ -372,9 +372,9 @@ export const TechStack = () => {
 /* ---------------- Testimonials ---------------- */
 export const Testimonials = () => {
   const items = [
-    { q: "NRD didn't just run our ads — they rebuilt how we think about growth. We doubled revenue in 5 months.", n: "Maya Chen", r: "Founder, Lumen Skincare" },
-    { q: "The clarity, speed, and creative quality are unlike any agency I've worked with. They feel like a co-founder.", n: "David Park", r: "CEO, Northwind SaaS" },
-    { q: "Within 90 days our inbound pipeline went from a trickle to a flood. The content system alone paid for the entire engagement.", n: "Sara Idris", r: "CMO, Vantage Capital" },
+    { q: "NRD's methods are business and Extraordinary. They know exactly what you need and they’ll tell you to pursue only what you need. Impressed with their services..", n: "Brand Manager", r: "Mercedes-Benz, India" },
+    { q: "It was incredible to reconnect in person with the crypto community at TOKEN2049 in Singapore. Good Job done by NRD & Team..", n: "Token 2049", r: "Organiser" },
+    { q: "Anirudh's Artistry embarked on a comprehensive digital marketing campaign that would encompass the entire spectrum of Sigma Group's ventures.", n: "Sigma Group", r: "CEO" },
     { q: "Best investment we've made in the business. Period. The team operates at a level I didn't think existed.", n: "Jordan Mills", r: "Founder, Aether Studio" },
   ];
   return (

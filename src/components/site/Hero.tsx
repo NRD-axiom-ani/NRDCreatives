@@ -21,7 +21,7 @@ export const Hero = () => {
         <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
           <div className="eyebrow animate-fade-up" style={{ animationDelay: "0.05s" }}>
             <Sparkles className="h-3 w-3 text-brand-blue" />
-            <span>100M+ Views Generated · Trusted by Modern Brands</span>
+            <span>800M+ Views Generated · Trusted by Modern Brands</span>
           </div>
 
           <h1
@@ -54,7 +54,7 @@ export const Hero = () => {
           {/* Stat ribbon */}
           <div className="mt-20 grid w-full grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/5 bg-white/5 backdrop-blur-xl md:grid-cols-4 animate-fade-up" style={{ animationDelay: "0.45s" }}>
             {[
-              { k: "100M+", v: "Views Generated" },
+              { k: "800M+", v: "Views Generated" },
               { k: "$50M+", v: "Pipeline Created" },
               { k: "120+", v: "Brands Scaled" },
               { k: "7.4x", v: "Avg ROAS" },

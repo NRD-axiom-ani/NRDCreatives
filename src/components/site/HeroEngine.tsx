@@ -203,8 +203,8 @@ export const HeroEngine = () => {
             style={{ animationDelay: "0.5s" }}
           >
             {[
-              { k: "100M+", v: "Views Generated" },
-              { k: "100+", v: "Projects Delivered" },
+              { k: "800M+", v: "Views Generated" },
+              { k: "200+", v: "Projects Delivered" },
               { k: "∞", v: "Industries Served" },
             ].map((s) => (
               <div key={s.v} className="bg-background/70 px-6 py-7 text-left">
