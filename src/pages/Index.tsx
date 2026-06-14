@@ -1,33 +1,42 @@
 import { Nav } from "@/components/site/Nav";
-import { Hero } from "@/components/site/Hero";
+import { HeroEngine } from "@/components/site/HeroEngine";
 import { CustomCursor, ScrollProgress } from "@/components/site/Interactions";
+import { ClientMarquee, Testimonials, AuditForm, FAQ, Footer } from "@/components/site/Sections";
 import {
-  ClientMarquee, Ecosystem, Services, Results, CaseStudies, Industries,
-  Process, Founder, TechStack, Testimonials, AuditForm, FAQ, FinalCTA, Footer,
-} from "@/components/site/Sections";
-import { OutOfTheBox } from "@/components/site/OutOfTheBox";
+  AttentionEconomy,
+  GrowthEngine,
+  ResultsDashboard,
+  CaseStudiesNetflix,
+  RevenueCalculator,
+  AIAudit,
+  FounderJourney,
+  FinalCTAStars,
+  NoiseOverlay,
+  FloatingBook,
+} from "@/components/site/Premium";
 
 const Index = () => {
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <NoiseOverlay />
       <ScrollProgress />
       <CustomCursor />
+      <FloatingBook />
       <Nav />
-      <Hero />
+
+      <HeroEngine />
       <ClientMarquee />
-      <Ecosystem />
-      <Services />
-      <OutOfTheBox />
-      <Results />
-      <CaseStudies />
-      <Industries />
-      <Process />
-      <Founder />
-      <TechStack />
+      <AttentionEconomy />
+      <GrowthEngine />
+      <ResultsDashboard />
+      <CaseStudiesNetflix />
+      <RevenueCalculator />
+      <AIAudit />
+      <FounderJourney />
       <Testimonials />
       <AuditForm />
       <FAQ />
-      <FinalCTA />
+      <FinalCTAStars />
       <Footer />
     </main>
   );
