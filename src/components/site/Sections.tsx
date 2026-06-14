@@ -78,6 +78,14 @@ const services = [
   { icon: Users, t: "Lead Generation", d: "Outbound, inbound, and partnership pipelines that fill calendars with qualified leads." },
   { icon: Bot, t: "AI Automation", d: "Workflows, agents, and internal tooling that 10x your team without 10x the headcount." },
   { icon: LineChart, t: "Growth Strategy", d: "Quarterly roadmaps, offer engineering, and KPI architecture that align every team." },
+  { icon: Mail, t: "Email & CRM", d: "Lifecycle flows, segmentation, and retention engines that turn one-time buyers into compounding revenue." },
+  { icon: ShoppingCart, t: "E-Commerce Growth", d: "Shopify builds, CRO, and full-funnel scaling systems engineered to multiply AOV and LTV." },
+  { icon: Rocket, t: "Launch Campaigns", d: "End-to-end launch architecture — offer, creative, traffic, and conversion — for products, brands, and founders." },
+  { icon: Sparkles, t: "Creative Production", d: "Editorial photography, cinematic video, and ad creative built to stop scrolls and sell." },
+  { icon: TrendingUp, t: "Conversion Optimization", d: "Funnel teardowns, landing page systems, and A/B testing that lift conversion across every touchpoint." },
+  { icon: Building2, t: "Personal Branding", d: "Founder positioning, thought leadership, and presence engineering on LinkedIn, X, and YouTube." },
+  { icon: Globe, t: "Influencer & Partnerships", d: "Curated creator collabs and strategic partnerships that unlock new audiences and trust at scale." },
+  { icon: ShieldCheck, t: "Fractional CMO", d: "Embedded growth leadership — strategy, team building, and execution oversight without a full-time hire." },
 ];
 
 export const Services = () => (
