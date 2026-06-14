@@ -5,6 +5,7 @@ import {
   ClientMarquee, Ecosystem, Services, Results, CaseStudies, Industries,
   Process, Founder, TechStack, Testimonials, AuditForm, FAQ, FinalCTA, Footer,
 } from "@/components/site/Sections";
+import { OutOfTheBox } from "@/components/site/OutOfTheBox";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <ClientMarquee />
       <Ecosystem />
       <Services />
+      <OutOfTheBox />
       <Results />
       <CaseStudies />
       <Industries />
