@@ -422,9 +422,41 @@ export const AuditForm = () => {
       return;
     }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 700));
-    setSubmitting(false);
-    toast.success("Audit request received. We'll reach out within 24 hours.");
+
+try {
+  const response = await fetch(
+    "https://formspree.io/f/mykalvwl",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(form),
+    }
+  );
+
+  if (response.ok) {
+    toast.success(
+      "Audit request received. We'll reach out within 24 hours."
+    );
+
+    setForm({
+      name: "",
+      email: "",
+      company: "",
+      website: "",
+      revenue: "",
+      goal: "",
+    });
+  } else {
+    toast.error("Something went wrong. Please try again.");
+  }
+} catch (error) {
+  toast.error("Network error. Please try again.");
+}
+
+setSubmitting(false);
     setForm({ name: "", email: "", company: "", website: "", revenue: "", goal: "" });
   };
 
@@ -456,11 +488,10 @@ export const AuditForm = () => {
                 </div>
                 <div>
                   <label className="mb-2 block text-xs uppercase tracking-widest text-foreground-muted">Monthly revenue</label>
-                  <select
-                    value={form.revenue}
-                    onChange={(e) => setForm({ ...form, revenue: e.target.value })}
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none focus:border-brand-blue/60"
-                  >
+                  <select value={form.revenue}
+  onChange={(e) => setForm({ ...form, revenue: e.target.value })}
+  className="w-full rounded-xl border border-white/10 bg-black px-4 py-3 text-sm text-white outline-none focus:border-brand-blue/60"
+>
                     <option value="">Select range</option>
                     <option>Pre-revenue</option>
                     <option>$0 – $10K / mo</option>
@@ -508,15 +539,15 @@ export const AuditForm = () => {
                 </div>
                 <h4 className="mt-5 text-lg font-medium">Calendly Integration</h4>
                 <p className="mt-2 text-sm text-foreground-muted">
-                  Embed your Calendly link here or open the scheduler in a new tab.
+                Book a complimentary strategy session to uncover growth opportunities, identify bottlenecks, and build a clear roadmap for scaling your business.
                 </p>
                 <a
-                  href="https://calendly.com/"
+                  href="https://calendly.com/anirudhbhadwal242/30min"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-primary mt-6 self-center"
                 >
-                  Open Calendly <ArrowUpRight className="h-4 w-4" />
+                  Book My Free Strategy Call <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-left text-xs text-foreground-muted">
                   <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3"><div className="font-mono text-white">30m</div>Discovery call</div>
