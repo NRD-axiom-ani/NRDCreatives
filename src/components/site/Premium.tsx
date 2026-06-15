@@ -50,7 +50,7 @@ export const AttentionEconomy = () => {
   const active = Math.min(STAGES.length - 1, Math.floor(progress * STAGES.length * 1.05));
 
   return (
-    <section ref={ref} className="relative py-32 md:py-48">
+    <section id="process" ref={ref} className="relative py-32 md:py-48">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow>The Attention Economy</SectionEyebrow>
@@ -155,7 +155,7 @@ const PILLARS = [
 export const GrowthEngine = () => {
   const [active, setActive] = useState(0);
   return (
-    <section id="engine" className="relative py-32 md:py-48">
+    <section id="services" className="relative py-32 md:py-48">
       <div className="container">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
@@ -303,9 +303,9 @@ export const ResultsDashboard = () => {
         </div>
 
         <div className="mt-16 grid gap-5 md:grid-cols-3 md:grid-rows-2">
-          <ResultTile big label="Total Views" target={100_000_000} suffix="+" sub="Across founder & brand accounts" active={seen} />
-          <ResultTile label="Reach" target={10_000_000} suffix="+" sub="Unique humans, last 24 months" active={seen} />
-          <ResultTile label="Projects" target={100} suffix="+" sub="Delivered end-to-end" active={seen} />
+          <ResultTile big label="Total Views" target={800_000_000} suffix="+" sub="Across founder & brand accounts" active={seen} />
+          <ResultTile label="Reach" target={200_000_000} suffix="+" sub="Unique humans, last 24 months" active={seen} />
+          <ResultTile label="Projects" target={200} suffix="+" sub="Delivered end-to-end" active={seen} />
           <ResultTile label="Industries" target={14} suffix="" sub="Verticals served & dominated" active={seen} />
           <ResultTile label="Avg Lift" target={312} suffix="%" sub="Inbound pipeline in 90 days" active={seen} />
         </div>

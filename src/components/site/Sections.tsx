@@ -1,9 +1,15 @@
 import {
   Eye, Users, ShoppingCart, TrendingUp, Sparkles, Megaphone, Code2, Search,
   Target, Bot, Palette, LineChart, CheckCircle2, ArrowUpRight, Quote, Plus,
-  Minus, Mail, Instagram, Linkedin, Youtube, Twitter, MapPin, Phone,
+  Minus, Mail, MapPin, Phone,
   Briefcase, Building2, Rocket, ShieldCheck, Zap, Globe,
 } from "lucide-react";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaXTwitter
+} from "react-icons/fa6";
 import { useState, FormEvent } from "react";
 import { MagneticButton } from "./MagneticButton";
 import { toast } from "sonner";
@@ -542,7 +548,7 @@ setSubmitting(false);
                 Book a complimentary strategy session to uncover growth opportunities, identify bottlenecks, and build a clear roadmap for scaling your business.
                 </p>
                 <a
-                  href="https://calendly.com/anirudhbhadwal242/30min"
+                  href="https://calendar.app.google/Fx7yQuy8rZwL2MRMA"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-primary mt-6 self-center"
@@ -570,7 +576,7 @@ export const FAQ = () => {
     { q: "How is NRD different from a typical agency?", a: "We operate as an embedded growth team — strategy, creative, paid, content, and engineering under one roof, with senior operators on every account." },
     { q: "How fast will I see results?", a: "Foundational systems ship in the first 30 days. Most clients see measurable lift in pipeline or revenue within 60–90 days." },
     { q: "Do you offer one-off projects?", a: "Occasionally — usually brand sprints or website builds. Our highest-impact work is 6+ month growth partnerships." },
-    { q: "What does pricing look like?", a: "Engagements start at $8K/mo and scale based on scope. We'll quote precisely on the strategy call." },
+    { q: "What does pricing look like?", a: "Our engagements are customized to the specific needs of each client. After understanding your goals, current position, and growth opportunities, we'll create a tailored roadmap designed to deliver measurable results. We'll discuss the best approach during your strategy call." },
     { q: "Can you work with our in-house team?", a: "Absolutely. We frequently plug in alongside in-house marketing, design, and product teams to accelerate output." },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -644,6 +650,24 @@ export const FinalCTA = () => (
 /* ---------------- Footer ---------------- */
 export const Footer = () => {
   const [email, setEmail] = useState("");
+  const socialLinks = [
+  {
+    icon: FaInstagram,
+    url: "https://www.instagram.com/nrdcreatives",
+  },
+  {
+    icon: FaLinkedin,
+    url: "https://www.linkedin.com/company/nrd-creatives",
+  },
+  {
+    icon: FaYoutube,
+    url: "https://www.youtube.com/@nrdcreatives",
+  },
+  {
+    icon: FaXTwitter,
+    url: "https://twitter.com/nrdcreatives",
+  },
+];
   const sub = (e: FormEvent) => {
     e.preventDefault();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -671,16 +695,18 @@ export const Footer = () => {
               The digital growth partner for ambitious brands. Attention, leads, customers, revenue — engineered.
             </p>
             <div className="mt-6 flex gap-3">
-              {[Instagram, Linkedin, Youtube, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground-muted transition-all hover:border-brand-blue/40 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              {socialLinks.map(({ icon: Icon, url }, i) => (
+  <a
+    key={i}
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Social link"
+    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-foreground-muted transition-all hover:border-brand-blue/40 hover:text-white"
+  >
+    <Icon className="h-4 w-4" />
+  </a>
+))}
             </div>
           </div>
 
@@ -707,8 +733,8 @@ export const Footer = () => {
             </form>
             <div className="mt-6 space-y-2 text-sm text-foreground-muted">
               <div className="flex items-center gap-2"><Mail className="h-3.5 w-3.5" /> hello@nrdcreatives.com</div>
-              <div className="flex items-center gap-2"><Phone className="h-3.5 w-3.5" /> +1 (415) 555-0199</div>
-              <div className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" /> Remote · Worldwide</div>
+              <div className="flex items-center gap-2"><Phone className="h-3.5 w-3.5" /> +91 9103665828</div>
+              <div className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" /> Remote · Worldwide · CA · IN · DXB </div>
             </div>
           </div>
         </div>
@@ -732,7 +758,12 @@ const FooterCol = ({ title, links }: { title: string; links: string[] }) => (
     <ul className="mt-5 space-y-3 text-sm text-foreground-muted">
       {links.map((l) => (
         <li key={l}>
-          <a href="#" className="transition-colors hover:text-white">{l}</a>
+          <a
+  href={title === "Services" ? "#services" : "#"}
+  className="transition-colors hover:text-white"
+>
+  {l}
+</a>
         </li>
       ))}
     </ul>

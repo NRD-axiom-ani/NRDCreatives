@@ -18,6 +18,7 @@ export const Nav = () => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -33,15 +34,19 @@ export const Nav = () => {
             scrolled ? "glass" : "bg-transparent"
           }`}
         >
-          <a href="#top" className="flex items-center gap-2.5">
-            <div className="relative h-8 w-8 rounded-lg bg-gradient-brand shadow-glow">
-              <div className="absolute inset-[2px] rounded-md bg-background flex items-center justify-center text-[10px] font-bold text-gradient-brand">
-                NRD
-              </div>
-            </div>
-            <span className="text-sm font-medium tracking-wide">NRD Creatives</span>
+          {/* Logo */}
+          <a href="#top" className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="NRD Creatives"
+              className="h-10 w-auto object-contain"
+            />
+            <span className="text-sm font-medium tracking-wide">
+              NRD Creatives
+            </span>
           </a>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {links.map((l) => (
               <a
@@ -54,25 +59,36 @@ export const Nav = () => {
             ))}
           </nav>
 
+          {/* CTA */}
           <div className="hidden md:block">
             <MagneticButton
               variant="primary"
               className="!px-5 !py-2.5 text-sm"
-              onClick={() => document.querySelector("#book")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .querySelector("#book")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Book A Call
             </MagneticButton>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             aria-label="Toggle menu"
             className="md:hidden rounded-full p-2 text-white"
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {open && (
           <div className="mt-3 glass rounded-2xl p-4 md:hidden animate-fade-up">
             <div className="flex flex-col gap-1">
@@ -86,6 +102,7 @@ export const Nav = () => {
                   {l.label}
                 </a>
               ))}
+
               <a
                 href="#book"
                 onClick={() => setOpen(false)}
